@@ -149,10 +149,8 @@
                             pageSize: this.queryInfo.pagesize
                         }
                     });
-                console.log(result)
                 this.resumeList=result.data.list;
                 this.datacount=result.data.list.length
-                // console.log(this.total)
             },
             getTagType(tagtype){
                 if(tagtype==='commit'){

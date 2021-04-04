@@ -13,7 +13,7 @@
                     <el-table-column type="index"></el-table-column>
                     <el-table-column label="权限名称" prop="menuname"></el-table-column>
                     <el-table-column label="路径" prop="path"></el-table-column>
-                    <el-table-column label="权限等级" prop="level">
+                    <el-table-column label="权限等级" prop="level" align="center">
                         <template slot-scope="scope">
                             <el-tag v-if="scope.row.level===0 ">一级</el-tag>
                             <el-tag type="success" v-if="scope.row.level===1 ">二级</el-tag>

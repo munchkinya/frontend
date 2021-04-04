@@ -392,7 +392,6 @@
                 this.$refs.tteditFormRef.validate( async valid => {
                     if (!valid) return;//表单预验证没通过。。。valid为true表示通过，否则没通过
                     //否则发起修改用户的请求
-                    console.log(this.tteditForm)
                     const {data: res} = await this.$http.get('trainingteacher/updatett',
                         {
                             params: {

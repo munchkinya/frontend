@@ -143,7 +143,6 @@
                             query: this.inputText
                         }
                     });
-                console.log(result.data.list)
                 this.infoList=result.data.list
                 this.datacount=result.data.list.length
             },

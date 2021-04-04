@@ -43,7 +43,6 @@
                             stID: window.sessionStorage.getItem('username'),
                         }
                     });
-                console.log(result.data)
                 if(result.data.intershipscore==='1'){
                     this.score=1
                 }else if(result.data.intershipscore==='2'){

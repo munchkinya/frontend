@@ -304,9 +304,9 @@
             {required: true, message: '请选择校内指导老师', trigger: 'blur'}
           ]
         },
-        selectedOptions11:'',
-        selectedOptions22:'',
-        selectedOptions33:'',
+        selectedOptions11:[],
+        selectedOptions22:[],
+        selectedOptions33:[],
         editstudentDialogVisible:false,
         editstuForm:{},
         editstuFormRules:{
@@ -435,25 +435,13 @@
       },
       //得到级联选择器中选中的值
       handleChange1(val){
-        this.selectedOptions11='';
-        for(var i=0;i<val.length-1;i++){
-          this.selectedOptions11+=val[i]+','
-        }
-        this.selectedOptions11+=val[val.length-1];
+        this.selectedOptions11=val;
       },
       handleChange2(val){
-        this.selectedOptions22='';
-        for(var i=0;i<val.length-1;i++){
-          this.selectedOptions22+=val[i]+','
-        }
-        this.selectedOptions22+=val[val.length-1];
+        this.selectedOptions22=val;
       },
       handleChange3(val){
-        this.selectedOptions33='';
-        for(var i=0;i<val.length-1;i++){
-          this.selectedOptions33+=val[i]+','
-        }
-        this.selectedOptions33+=val[val.length-1];
+        this.selectedOptions33=val;
       },
       //弹出编辑页面
       async showEditDialog(id){

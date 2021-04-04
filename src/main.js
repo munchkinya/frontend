@@ -24,18 +24,26 @@ Vue.prototype.$echarts = echarts;
 
 //导入axios,挂载组件
 import axios from 'axios'
+import qs from 'qs'
 //设置请求的根路径
 axios.defaults.baseURL='http://localhost:8888/api/';
 //通过axios请求拦截器添加token，保证拥有获取数据的权限
 axios.interceptors.request.use(config =>{
-  config.headers.access_token=window.sessionStorage.getItem('token');
-  /*在最后必须return config,固定写法*/
-  return config;
+    config.headers.access_token=window.sessionStorage.getItem('token');
+    // GET请求中封装数组的请求形式，否则后端接收不到正确的数组格式
+    if (config.method === 'get') {
+        config.paramsSerializer = function(params) {
+            return qs.stringify(params, { arrayFormat: 'repeat' })
+        }
+    }
+    /*在最后必须return config,固定写法*/
+    return config;
   },
     error=>{
       console.log(error);
       Promise.reject(error);
-    });
+    }
+);
 Vue.prototype.$http =axios;
 //导入弹框提示组件
 import {Message } from 'element-ui'
