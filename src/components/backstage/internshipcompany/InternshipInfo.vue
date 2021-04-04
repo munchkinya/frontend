@@ -27,11 +27,11 @@
                 <el-table-column prop="stunumber" label="学号" width="100"></el-table-column>
                 <el-table-column prop="stuname" label="姓名" width="120"></el-table-column>
                 <el-table-column prop="coname" label="所在学院" width="120"></el-table-column>
-                <el-table-column prop="intername" label="实习公司" width="150"></el-table-column>
+                <el-table-column prop="intername" label="实习公司" width="250"></el-table-column>
                 <el-table-column prop="starttime" label="实习开始时间" width="120" :formatter="dateFormat1"></el-table-column>
                 <el-table-column prop="endtime" label="实习结束时间" width="120" :formatter="dateFormat2"></el-table-column>
                 <el-table-column prop="status" label="实习状态" ></el-table-column>
-                <el-table-column prop="delflag" label="状态（默认未删除）" width="150">
+                <el-table-column prop="delflag" label="状态（默认未删除）" width="150" align="center">
                     <template slot-scope="scope"><!--{{scope.row}}可得到当前行的所有信息-->
                         <!--{{scope.row}}--><!--0代表没被删除，1代表删除-->
                         <el-switch

@@ -25,7 +25,7 @@
             <el-table :data="internshipcomList" border stripe>
                 <!--label每一列的标题-->
                 <el-table-column type="index" label="#" width="60"></el-table-column>
-                <el-table-column prop="interName" label="公司名称" width="180"></el-table-column>
+                <el-table-column prop="interName" label="公司名称" width="250"></el-table-column>
                 <el-table-column prop="principal" label="负责人" width="100"></el-table-column>
                 <el-table-column prop="interTel" label="负责人联系方式" width="150"></el-table-column>
                 <el-table-column prop="address" label="公司地址"></el-table-column>

@@ -37,14 +37,14 @@
             <!--一级菜单的模板区-->
             <template slot="title"><i class="iconfont icon-icon-test" style="margin-right: 10px;"></i><span>学生管理</span></template>
             <el-menu-item index="student" @click="saveNavState('/student')"><i class="el-icon-menu"></i>学生维护</el-menu-item>
-            <el-menu-item index="studentimport" @click="saveNavState('/studentimport')"><i class="el-icon-menu"></i>学生信息导入</el-menu-item>
-            <el-menu-item index="scoreimport" @click="saveNavState('/scoreimport')"><i class="el-icon-menu"></i>学生成绩导入</el-menu-item>
+            <!--<el-menu-item index="studentimport" @click="saveNavState('/studentimport')"><i class="el-icon-menu"></i>学生信息导入</el-menu-item>
+            <el-menu-item index="scoreimport" @click="saveNavState('/scoreimport')"><i class="el-icon-menu"></i>学生成绩导入</el-menu-item>-->
           </el-submenu>
 
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-s-custom"></i><span>学校教师管理</span></template>
             <el-menu-item index="schoolteacher" @click="saveNavState('/schoolteacher')"><i class="el-icon-menu"></i>教师维护</el-menu-item>
-            <el-menu-item index="stimport" @click="saveNavState('/stimport')"><i class="el-icon-menu"></i>教师批量导入</el-menu-item>
+<!--            <el-menu-item index="stimport" @click="saveNavState('/stimport')"><i class="el-icon-menu"></i>教师批量导入</el-menu-item>-->
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-s-check"></i><span>实训管理</span></template>

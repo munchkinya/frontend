@@ -25,14 +25,14 @@
             <el-table :data="trainteacherList" border stripe>
                 <!--label每一列的标题-->
                 <el-table-column type="index" label="#" width="60"></el-table-column>
-                <el-table-column prop="tteachNumber" label="用户名" width="170"></el-table-column>
+                <el-table-column prop="tteachNumber" label="用户名" width="250"></el-table-column>
                 <el-table-column prop="tteachName" label="姓名" width="120"></el-table-column>
                 <el-table-column prop="tteachSex" label="性别" width="80"></el-table-column>
-                <el-table-column prop="traincompanyname" label="所属公司" width="180"></el-table-column>
+                <el-table-column prop="traincompanyname" label="所属公司" width="280"></el-table-column>
                 <el-table-column prop="directname" label="任教方向" width="120"></el-table-column>
                 <el-table-column prop="dclassname" label="任教班级" width="120"></el-table-column>
                 <el-table-column prop="collagename" label="所在院系" width="150"></el-table-column>
-                <el-table-column prop="delflag" label="状态（默认未删除）" width="150">
+                <el-table-column prop="delflag" label="状态（默认未删除）" width="150" align="center">
                     <template slot-scope="scope"><!--{{scope.row}}可得到当前行的所有信息-->
                         <!--{{scope.row}}--><!--0代表没被删除，1代表删除-->
                         <el-switch
