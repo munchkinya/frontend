@@ -34,6 +34,7 @@ import PriceNews from "../components/FrontDesk/news/PriceNews";
 import InterNews from "../components/FrontDesk/news/InterNews";
 import Salary from "../components/FrontDesk/allperson/Salary";
 import Location from "../components/FrontDesk/allperson/Location";
+import GivIntershipScores from "../components/FrontDesk/internshipcompany/GivIntershipScores";
 
 //每个角色的工作台
 import PersonIndex from "../components/FrontDesk/PersonIndex";
@@ -146,6 +147,7 @@ const router = new VueRouter({
            {path: '/checkchangeinterinfo', component: CheckChangeIinterInfo},
            {path: '/intershipscore', component: IntershipScore},
            {path: '/givintershipscore', component: GivIntershipScore},
+           {path: '/givintershipscores', component: GivIntershipScores},
            {path:'/indexwelcome',component:Welcome},
            {path:'/rankinglist',component:RankingList},
            {path:'/publishpricenews',component:PublishPriceNews},

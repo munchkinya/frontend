@@ -2,7 +2,7 @@
     <div>
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item>相关实习</el-breadcrumb-item>
-            <el-breadcrumb-item>学生实习成绩</el-breadcrumb-item>
+            <el-breadcrumb-item>给予学生实习成绩</el-breadcrumb-item>
         </el-breadcrumb>
         <el-card>
             <el-row :gutter="10"><!--搜索框和按钮之间的间隔-->
@@ -21,7 +21,6 @@
                     <el-table-column type="index" label="#" width="80" align="center"></el-table-column>
                     <el-table-column prop="stunumber" label="学生学号" align="center" width="100px"></el-table-column>
                     <el-table-column prop="stuname" label="学生姓名" align="center"></el-table-column>
-                    <el-table-column prop="intername" label="实习公司" align="center" width="250px"></el-table-column>
                     <el-table-column prop="old_post" label="岗位" align="center" width="200px"></el-table-column>
                     <el-table-column prop="old_post" label="薪资（RMB/月）" align="center" width="150px"></el-table-column>
                     <el-table-column prop="starttime" label="实习开始时间" align="center" :formatter="dateFormat1" width="150px"></el-table-column>
@@ -29,8 +28,8 @@
                     <el-table-column  label="操作" align="center" fixed="right" width="100px">
                         <template slot-scope="scope"><!--//作用域插槽-->
                             <el-button size="small" type="primary" @click="getscore(scope.row.inId)"
-                                       :disabled="scope.row.intershipscoreone==='1'||scope.row.intershipscoreone==='2'||scope.row.intershipscoreone==='3'||
-                                       scope.row.intershipscoreone==='4'||scope.row.intershipscoreone==='5'?true:false">
+                                       :disabled="scope.row.intershipscoretwo==='1'||scope.row.intershipscoretwo==='2'||scope.row.intershipscoretwo==='3'||
+                                       scope.row.intershipscoretwo==='4'||scope.row.intershipscoretwo==='5'?true:false">
                                 成 绩</el-button>
                         </template>
                     </el-table-column>
@@ -110,10 +109,10 @@
                 this.getStudentChangeInfo();
             },
             async getStudentIntershipScore(){
-                const result = await this.$http.get('internshipinfo/getallstudentintershipinfo',
+                const result = await this.$http.get('internshipinfo/getallstudentintershipinfobyinc',
                     {
                         params: {
-                            stID: window.sessionStorage.getItem('username'),
+                            incID: window.sessionStorage.getItem('username'),
                             pageNum: this.queryInfo.pagenum,
                             pageSize: this.queryInfo.pagesize,
                             query: this.inputText
@@ -149,7 +148,7 @@
                 this.radio=null
             },
             async submit(){
-                const result = await this.$http.get('internshipinfo/givestudentscore',
+                const result = await this.$http.get('internshipinfo/givestudentscorebyinc',
                     {
                         params: {
                             inid: this.inid,

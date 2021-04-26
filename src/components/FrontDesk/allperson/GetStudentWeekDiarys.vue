@@ -165,8 +165,20 @@
                 a.href = blobUrl;
                 a.click();
             },
-
-
+            //打包下载实习周记
+            package(){
+                fetch('http://localhost:8888/api/weekdiary/downloadalldiary', {
+                    method:"POST",
+                    headers: {
+                        'access_token':window.sessionStorage.getItem('token'),
+                        'teacherId': window.sessionStorage.getItem('username'),
+                    }
+                }).then(res => res.blob())
+                    .then(data => {
+                        let blobUrl = window.URL.createObjectURL(new Blob([data]));
+                        this.download(blobUrl,'a.zip');
+                    });
+            },
         },
         created() {
             this.getStudentWeekDiary()
