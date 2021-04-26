@@ -35,6 +35,8 @@ import InterNews from "../components/FrontDesk/news/InterNews";
 import Salary from "../components/FrontDesk/allperson/Salary";
 import Location from "../components/FrontDesk/allperson/Location";
 import GivIntershipScores from "../components/FrontDesk/internshipcompany/GivIntershipScores";
+import FeedBack from "../components/FrontDesk/Student/FeedBack";
+import GetFeedback from "../components/FrontDesk/SchoolTeacher/GetFeedback";
 
 //每个角色的工作台
 import PersonIndex from "../components/FrontDesk/PersonIndex";
@@ -158,7 +160,9 @@ const router = new VueRouter({
            {path: '/fronteditnews',name:'fronteditnews',component: FrontEditNews},
            {path: '/frontaddnews',name:'frontaddnews',component: FrontAddNews},
            {path: '/salary',name:'Salary',component: Salary},
-           {path: '/location',name:'Location',component: Location}
+           {path: '/location',name:'Location',component: Location},
+           {path: '/feedback',name:'FeedBack',component: FeedBack},
+           {path: '/getfeedback',name:'GetFeedback',component: GetFeedback}
        ]
    }
    ]
