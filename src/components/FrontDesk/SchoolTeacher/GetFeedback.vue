@@ -42,7 +42,7 @@
 
 <script>
     export default {
-        name: "GivIntershipScore",
+        name: "GetFeedback",
         data(){
             return{
                 inputText:'',

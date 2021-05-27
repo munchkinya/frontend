@@ -9,7 +9,7 @@
         <el-card style="height: 450px">
             <el-form ref="form" :model="form" :rules="formRules" label-width="80px">
                 <el-form-item label="评语：" style="min-height: 200px" prop="feedback">
-                    <el-input type="textarea" v-model="form.feedback" :disabled="flag"></el-input>
+                    <el-input type="textarea" v-model="form.feedback" :disabled="flag" style="font-size: 18px"></el-input>
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" @click="onSubmit" style="float: right" :disabled="flag">提交</el-button>
