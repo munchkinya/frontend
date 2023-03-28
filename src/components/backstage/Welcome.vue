@@ -1,7 +1,7 @@
 <template>
     <div class="bgm">
         <h3>
-            welcome，欢迎登录实习指导平台
+            welcome，欢迎管理员登录实习指导平台
         </h3>
         <el-card>
             <el-row :gutter="20">

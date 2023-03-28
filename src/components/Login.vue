@@ -3,7 +3,7 @@
       <div class="login_box">
         <!--头像区域-->
         <div class="avatar_box">
-          <img src="../assets/loginphoto/logo.jpg" alt="">
+          <img src="../assets/loginphoto/logo.jpg" alt="HRBULogo">
         </div>
         <!--登录表单区域-->
         <!--表单数据绑定1.先给form表单加：model，2.给每一个input项加一个v-model3.在行为区定义数据对象-->
@@ -21,7 +21,7 @@
           </el-form-item>
           <!--按钮-->
           <el-form-item class="btns">
-            <el-button type="info">忘记密码</el-button>
+            <el-button type="info" @click='forgetPassword'>忘记密码</el-button>
             <el-button type="danger" @click="login">登 录</el-button>
           </el-form-item>
         </el-form>
@@ -76,13 +76,16 @@ export default {
           window.sessionStorage.setItem('username',this.loginForm.username);
           window.sessionStorage.setItem('password',this.loginForm.password);
           //2.通过编程式导航跳转到后台主页，路由地址是。。。。。
-          if(this.loginForm.username!='admin'){//这里管理员只给了admin这一个账号
-            this.$router.push('/personindex');
+          if(this.loginForm.username!=='admin'){//这里管理员只给了admin这一个账号
+            this.$router.push('/personindex').catch(err=>{});
           }else{
-            this.$router.push('/home');
+            this.$router.push('/home').catch(err=>{});
           }
         }
       })
+    },
+    forgetPassword(){
+      this.$message.error('请私下联系管理员');
     }
   }
 }

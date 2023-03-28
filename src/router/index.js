@@ -109,7 +109,7 @@ const router = new VueRouter({
        path: '/index',
        component: Index,
        meta: {
-           keepAlive: true//只要路由里面不写，那就没有公共组件
+           keepAlive: true//为true时导航栏在该页面显示；为false或者不写，那公共组件就不在该页面显示
        }
    },
    {path: '/tonewdetil',name:'tonewdetil',component: ToNewDetil,meta: {keepAlive: true}},

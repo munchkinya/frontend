@@ -155,7 +155,7 @@
         methods:{
             async getRoleList(){
                 const result = await this.$http.get('/role/getAllRoles')
-                if (result.status !== 200) return thi.$message.error('获取角色列表失败！');
+                if (result.status !== 200) return this.$message.error('获取角色列表失败！');
                 this.roleList = result.data;
             },
             //根据id删除对应的权限
@@ -177,6 +177,7 @@
                 this.roleid=role.id
                 /*再显示对话框之前，要先获取所有数据*/
                 const {data:res} = await this.$http.get('/menu/getallmenutree')
+              console.log(res)
                 this.rightslist=res;
                 //递归获取二级节点的id
                 this.getLeafKeys(role,this.defKeys);
@@ -202,7 +203,7 @@
                 ];
                 const idStr=keys.join(',');
                 const result=await this.$http.put(`/role/updaterolemenu/${this.roleid}/${idStr}`);
-                if(result.data!=200){
+                if(result.data!==200){
                     return this.$message.error('分配权限失败')
                 }
                 this.$message.success('分配权限成功！')

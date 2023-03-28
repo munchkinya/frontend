@@ -4,18 +4,18 @@
     <el-header>
       <div>
         <img src="../../assets/Backstagephoto/hrbu.png" class="backlogo" style="width: 170px">
-        <span>后台管理系统</span>
+        <span>实习指导平台后台管理系统</span>
       </div>
       <div>
-      <el-dropdown @command="handleCommand">
-        <i class="el-icon-user-solid" style="margin-right: 15px;background-color: #ffffff;size: 30px"></i>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item command="1"><i class="el-icon-thumb"></i>修改密码</el-dropdown-item>
-          <el-dropdown-item command="2"><i class="el-icon-thumb"></i>首页</el-dropdown-item>
-          <el-dropdown-item command="3"><i class="el-icon-thumb"></i>退出系统</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-      {{username}}
+        <el-dropdown @command="handleCommand">
+          <i class="el-icon-user-solid" style="margin-right: 15px;background-color: #ffffff;size: 30px"></i>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="1"><i class="el-icon-thumb"></i>修改密码</el-dropdown-item>
+            <el-dropdown-item command="2"><i class="el-icon-thumb"></i>首页</el-dropdown-item>
+            <el-dropdown-item command="3"><i class="el-icon-thumb"></i>退出系统</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+        {{username}}
       </div>
     </el-header>
     <!--页面主体区-->
@@ -23,7 +23,8 @@
       <!--侧边栏-->
       <el-aside :width="isCollapse ? '64px' :'200px' ">
         <div class="toggle-button" @click="toggleCollapse">|||</div>
-        <!--左侧菜单内容-->                                                                       <!--动态绑定布尔值，取消折叠动画-->
+        <!--左侧菜单内容-->
+        <!--动态绑定布尔值，取消折叠动画-->
         <el-menu background-color="#333744" text-color="#fff" active-text-color="#409EFF"
                  :unique-opened="true"  :collapse="isCollapse" :collapse-transition="false" :router="true" default-active="activePath">
           <!--一级菜单-->
@@ -37,14 +38,11 @@
             <!--一级菜单的模板区-->
             <template slot="title"><i class="iconfont icon-icon-test" style="margin-right: 10px;"></i><span>学生管理</span></template>
             <el-menu-item index="student" @click="saveNavState('/student')"><i class="el-icon-menu"></i>学生维护</el-menu-item>
-            <!--<el-menu-item index="studentimport" @click="saveNavState('/studentimport')"><i class="el-icon-menu"></i>学生信息导入</el-menu-item>
-            <el-menu-item index="scoreimport" @click="saveNavState('/scoreimport')"><i class="el-icon-menu"></i>学生成绩导入</el-menu-item>-->
           </el-submenu>
 
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-s-custom"></i><span>学校教师管理</span></template>
             <el-menu-item index="schoolteacher" @click="saveNavState('/schoolteacher')"><i class="el-icon-menu"></i>教师维护</el-menu-item>
-<!--            <el-menu-item index="stimport" @click="saveNavState('/stimport')"><i class="el-icon-menu"></i>教师批量导入</el-menu-item>-->
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-s-check"></i><span>实训管理</span></template>

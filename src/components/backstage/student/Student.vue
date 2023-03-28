@@ -24,22 +24,22 @@
       <!--:data为表格绑定一个数据源，prop为每一列表示渲染的数据对象-->
       <el-table :data="studentList" border stripe>
         <!--label每一列的标题-->
-        <el-table-column type="index" label="#" width="60"></el-table-column>
-        <el-table-column prop="stuNumber" label="学号" width="120"></el-table-column>
-        <el-table-column prop="stuName" label="姓名" width="120"></el-table-column>
-        <el-table-column prop="stuSex" label="性别" width="80"></el-table-column>
-        <el-table-column prop="stuEmail" label="电子邮箱" width="180"></el-table-column>
-        <el-table-column prop="stuTel" label="联系电话" width="120"></el-table-column>
-        <el-table-column prop="collagename" label="所在院系" width="150"></el-table-column>
-        <el-table-column prop="grade" label="年级" width="100"></el-table-column>
-        <el-table-column prop="majorname" label="行政专业" width="150"></el-table-column>
-        <el-table-column prop="adminclassname" label="行政班级" width="150"></el-table-column>
-        <el-table-column prop="directname" label="专业方向" width="150"></el-table-column>
-        <el-table-column prop="directclassname" label="方向班级" width="150"></el-table-column>
-        <el-table-column prop="schoolteachername" label="校内指导教师" width="150"></el-table-column>
-        <el-table-column prop="trainteachername" label="校外指导教师" width="150"></el-table-column>
-        <el-table-column prop="traincomname" label="实训企业" width="150"></el-table-column>
-        <el-table-column prop="delflag" label="状态（默认未删除）" width="150">
+        <el-table-column type="index" label="#" min-width="60"></el-table-column>
+        <el-table-column prop="stuNumber" label="学号" min-width="120"></el-table-column>
+        <el-table-column prop="stuName" label="姓名" min-width="120"></el-table-column>
+        <el-table-column prop="stuSex" label="性别" min-width="80"></el-table-column>
+        <el-table-column prop="stuEmail" label="电子邮箱" min-width="180"></el-table-column>
+        <el-table-column prop="stuTel" label="联系电话" min-width="120"></el-table-column>
+        <el-table-column prop="collagename" label="所在院系" min-width="150"></el-table-column>
+        <el-table-column prop="grade" label="年级" min-width="100"></el-table-column>
+        <el-table-column prop="majorname" label="行政专业" min-width="150"></el-table-column>
+        <el-table-column prop="adminclassname" label="行政班级" min-width="150"></el-table-column>
+        <el-table-column prop="directname" label="专业方向" min-width="150"></el-table-column>
+        <el-table-column prop="directclassname" label="方向班级" min-width="150"></el-table-column>
+        <el-table-column prop="schoolteachername" label="校内指导教师" min-width="150"></el-table-column>
+        <el-table-column prop="trainteachername" label="校外指导教师" min-width="150"></el-table-column>
+        <el-table-column prop="traincomname" label="实训企业" min-width="150"></el-table-column>
+        <el-table-column prop="delflag" label="状态（默认未删除）" min-width="150">
           <template slot-scope="scope"><!--{{scope.row}}可得到当前行的所有信息-->
             <!--{{scope.row}}--><!--0代表没被删除，1代表删除-->
             <el-switch
@@ -247,18 +247,6 @@
         total:0,//为了分页显示的时候
         addDialogVisible:false,
         studentaddForm:{},
-        studentaddFormrules:{
-          stuNumber:'',
-          stuPassword:'',
-          stuName:'',
-          stuSex:'',
-          stuEmail:'',
-          stuTel:'',
-          grade:'',
-          selectedOptions1:[],
-          selectedOptions2:[],
-          selectedOptions3:[]
-        },
         options1:[],
         //三个级联选择器的公共模板
         //级联选择器模板值

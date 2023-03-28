@@ -6,8 +6,8 @@
         <span>实习指导平台</span>
       </div>
       <div class="btns">
-        <el-button type="danger" @click="toindex">首页</el-button>
-        <el-button type="danger" @click="tologin">用户登录</el-button>
+<!--        <el-button type="danger" @click="toIndex">首页</el-button>-->
+        <el-button type="danger" @click="toLogin">用户登录</el-button>
       </div>
     </el-header>
     <el-main>
@@ -23,7 +23,6 @@
   import '../../node_modules/echarts/map/js/china.js' // 引入中国地图数据
 export default {
   name: 'Back',
-  props: ["userJson"],
   data() {
     return {
       chart: null
@@ -40,16 +39,15 @@ export default {
     this.chart = null;
   },
   methods: {
-    tologin() {
+    toLogin() {
       this.$router.push('/login').catch(err => {});//跳转到其他页面,这里push会跳转异常，因为返回promise对象，没人接
     },
-    toindex(){
-      this.$router.push('/index').catch(err => {});//跳转到其他页面
-    },
+    // toIndex(){
+    //   this.$router.push('/index').catch(err => {});//跳转到其他页面
+    // },
     //绘制地图
     chinaConfigure() {
       let myChart = echarts.init(this.$refs.myEchart); //这里是为了获得容器所在位置
-      console.log(this.userJson);
       window.onresize = myChart.resize;
       myChart.setOption({ // 进行相关配置
         backgroundColor: "#013954",
@@ -57,7 +55,7 @@ export default {
         dataRange: {
           show: false,
           min: 0,
-          max: 1000,
+          max: 50,
           text: ['High', 'Low'],
           realtime: true,
           calculable: true,
@@ -99,26 +97,35 @@ export default {
             geoIndex: 0,
             data: [{
               "name": "北京",
-              "value": 599
+              "value": 49
             }, {
               "name": "上海",
-              "value": 142
+              "value": 34
             }, {
               "name": "黑龙江",
               "value": 44
             }, {
               "name": "深圳",
-              "value": 92
+              "value": 36
             }, {
-              "name": "湖北",
-              "value": 810
+              "name": "吉林",
+              "value": 23
             }, {
-              "name": "四川",
-              "value": 453
+              "name": "广东",
+              "value": 20
             }, {
               "name": "河南",
-              "value": 23
-            },
+              "value": 2
+            },{
+              "name": "浙江",
+              "value": 10
+            },{
+              "name": "四川",
+              "value": 7
+            },{
+              "name": "新疆",
+              "value": 4
+            }
             ]
           }
         ]

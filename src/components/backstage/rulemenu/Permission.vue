@@ -37,7 +37,7 @@
         methods:{
             async getMenuList(){
                 const result = await this.$http.get('/menu/getallmenu')
-                if (result.status !== 200) return thi.$message.error('获取权限列表失败！');
+                if (result.status !== 200) return this.$message.error('获取权限列表失败！');
                 this.menuList = result.data;
             }
         },
