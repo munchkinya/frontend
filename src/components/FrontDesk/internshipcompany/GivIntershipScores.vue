@@ -118,8 +118,13 @@
                             query: this.inputText
                         }
                     });
-                this.infoList=result.data.list
-                this.datacount=result.data.total
+                if(result.data.list.length===1&&result.data.list[0].inId===0) {
+                  this.datacount = 0;
+                  this.infoList = [];
+                } else{
+                  this.infoList=result.data.list
+                  this.datacount=result.data.total
+                }
             },
             async getStudentIntershipScoreByOthers(){
                 this.queryInfo.pagenum=1

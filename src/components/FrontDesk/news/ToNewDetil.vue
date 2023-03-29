@@ -57,6 +57,7 @@
                         }
                     });
                 this.newinfo=res;
+                console.log(this.newinfo)
                 this.datatime=this.dateFormat1(this.newinfo.publishtime)
             },
             dateFormat1(data1) {

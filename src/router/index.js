@@ -64,6 +64,7 @@ import PublishPoticeNews from "../components/FrontDesk/TrainningTeacher/PublishP
 import FrontNewsdetail from "../components/FrontDesk/allperson/FrontNewsdetail";
 import FrontEditNews from "../components/FrontDesk/allperson/FrontEditNews";
 import FrontAddNews from "../components/FrontDesk/allperson/FrontAddNews";
+import Download from '@/components/FrontDesk/news/Download.vue'
 
 Vue.use(VueRouter);
 
@@ -126,6 +127,7 @@ const router = new VueRouter({
            {path: '/poticenews',component: PoticeNews,meta: {keepAlive: true}},
            {path: '/pricenews',component: PriceNews,meta: {keepAlive: true}},
            {path: '/internews',component: InterNews,meta: {keepAlive: true}},
+            {path: '/download',component: Download,meta: {keepAlive: true}},
 
        ]
    },

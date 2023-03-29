@@ -38,7 +38,7 @@
                 total:0,//所有用户数据总量
                 queryInfo:{
                     pagenum:1,//默认从第一页
-                    pagesize:6//默认五条一页
+                    pagesize:10//默认五条一页
                 },
             }
         },
