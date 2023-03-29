@@ -1,7 +1,7 @@
 <template>
     <div class="index_container">
         <!--走马灯区-->
-        <el-carousel :interval="4000" type="card" height="350px">
+        <el-carousel :interval="4000" type="card" height="350px" :autoplay='false'>
             <el-carousel-item v-for="item in newslist" :key="item.notice_id">
                 <h3 class="medium">
                     <el-image
@@ -23,7 +23,11 @@
                     </div>
                     <el-table :data="studentnews" :show-header="false" :cell-style="changestyle" style="margin: 0"
                               @row-click="handle">
-                        <el-table-column prop="title" width="408px"  show-overflow-tooltip></el-table-column>
+                        <el-table-column width="408px"  show-overflow-tooltip>
+                          <template slot-scope='scope'>
+                            <el-link target='_blank' :underline="false">{{scope.row.title}}</el-link>
+                          </template>
+                        </el-table-column>
                     </el-table>
                 </div>
             </el-col>
@@ -34,7 +38,11 @@
                     </div>
                     <el-table :data="poticenews" :show-header="false" :cell-style="changestyle1" style="margin: 0"
                               @row-click="handle">
-                        <el-table-column prop="title" width="408px"  show-overflow-tooltip></el-table-column>
+                      <el-table-column width="408px"  show-overflow-tooltip>
+                        <template slot-scope='scope'>
+                          <el-link target='_blank' :underline="false">{{scope.row.title}}</el-link>
+                        </template>
+                      </el-table-column>
                     </el-table>
                 </div>
             </el-col>
@@ -45,7 +53,11 @@
                     </div>
                     <el-table :data="internews" :show-header="false" :cell-style="changestyle" style="margin: 0"
                               @row-click="handle">
-                        <el-table-column prop="title" width="408px"  show-overflow-tooltip></el-table-column>
+                      <el-table-column width="408px"  show-overflow-tooltip>
+                        <template slot-scope='scope'>
+                          <el-link target='_blank' :underline="false">{{scope.row.title}}</el-link>
+                        </template>
+                      </el-table-column>
                     </el-table>
                 </div>
             </el-col>
@@ -54,19 +66,19 @@
         <div class="fast_path">
             <div class="mainbg" style="margin-left: 200px">
                 <img src="../../assets/loginphoto/logo.jpg">
-                <el-link href="http://www.hrbu.edu.cn/" type="danger">学校官网</el-link>
+                <el-link href="http://www.hrbu.edu.cn/" type="danger" target="_blank">学校官网</el-link>
             </div>
             <div class="mainbg">
                 <img src="../../assets/icon/hayuanapp.png">
-                <el-link href="http://www.hrbu.edu.cn/info/1301/16419.htm" type="danger">哈院APP</el-link>
+                <el-link href="http://www.hrbu.edu.cn/info/1301/16419.htm" type="danger" target="_blank">哈院APP</el-link>
             </div>
             <div class="mainbg">
                 <img src="../../assets/icon/jiaowuxitong.png">
-                <el-link href="http://jwmis.hrbu.edu.cn/" type="danger">教务系统</el-link>
+                <el-link href="http://jwmis.hrbu.edu.cn/" type="danger" target="_blank">教务系统</el-link>
             </div>
             <div class="mainbg">
                 <img src="../../assets/icon/jiuyexinxi.png">
-                <el-link href="https://www.hljbys.org.cn/school/index?mark=hrbu" type="danger">就业信息</el-link>
+                <el-link href="https://www.hljbys.org.cn/school/index?mark=hrbu" type="danger" target="_blank">就业信息网</el-link>
             </div>
         </div>
     </div>
@@ -113,7 +125,7 @@
                 this.$router.push({name: "tonewdetil", params: {id: row.notice_id}})
             }
         },
-        mounted() {
+        created() {
             this.getSlideshownews();
             this.getNewList()
             this.getPricelist()
@@ -198,6 +210,8 @@
 .fast_path{
     background-color: #9A0000;
     height: 100px;
+    display: flex;
+    align-items: center;
     div{
         float: left;
         margin-right: 200px;
@@ -205,9 +219,13 @@
     .mainbg{
         height: 75px;
         width: 75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         img{
-            height: 75px;
-            width: 75px;
+            height: 50px;
+            width: 50px;
         }
     }
 }

@@ -8,11 +8,11 @@
       </div>
       <div>
         <el-dropdown @command="handleCommand">
-          <i class="el-icon-user-solid" style="margin-right: 15px;background-color: #ffffff;size: 30px"></i>
+          <i class="el-icon-user-solid" style="margin-right: 15px;background-color: #ffffff;size: 30px;"></i>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item command="1"><i class="el-icon-thumb"></i>修改密码</el-dropdown-item>
-            <el-dropdown-item command="2"><i class="el-icon-thumb"></i>首页</el-dropdown-item>
-            <el-dropdown-item command="3"><i class="el-icon-thumb"></i>退出系统</el-dropdown-item>
+            <el-dropdown-item command="1" style='min-width: 30px'><i class="el-icon-thumb"></i>修改密码</el-dropdown-item>
+            <el-dropdown-item command="2" style='min-width: 30px' divided><i class="el-icon-thumb"></i>首页</el-dropdown-item>
+            <el-dropdown-item command="3" style='min-width: 30px' divided><i class="el-icon-thumb"></i>退出系统</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
         {{username}}

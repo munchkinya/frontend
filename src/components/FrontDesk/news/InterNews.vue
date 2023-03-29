@@ -9,7 +9,11 @@
         <div class="newslist">
             <el-table :data="newsList" :show-header="false" :cell-style="changestyle" @row-click="handle"
                       style="margin-top: 0">
-                <el-table-column prop="title" ></el-table-column>
+                <el-table-column>
+                  <template slot-scope='scope'>
+                    <el-link target='_blank' :underline="false">{{scope.row.title}}</el-link>
+                  </template>
+                </el-table-column>
                 <el-table-column prop="publishtime" width="150px" :formatter="dateFormat1"></el-table-column>
             </el-table>
             <el-pagination

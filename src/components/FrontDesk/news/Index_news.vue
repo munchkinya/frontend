@@ -72,7 +72,7 @@
         color: #333;
         text-align: center;
         line-height: 200px;
-        margin-left: 200px;
+        margin-left: 100px;
         .el-menu{
             background-color: #9A0000;
             text-color: #FFFFFF;

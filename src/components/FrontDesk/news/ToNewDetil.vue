@@ -67,7 +67,7 @@
                 return (year + "年" + month + "月" + day+"日");
             },
         },
-        mounted: function () {
+        created: function () {
             //得到新闻id
             this.id = this.$route.params.id;
             this.getNewByid();
