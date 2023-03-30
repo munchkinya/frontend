@@ -54,6 +54,9 @@ export default {
       }
     }
   },
+  created() {
+    sessionStorage.clear();
+  },
   methods: {
     login () {//登录前预验证            如果某个方法的返回值是promise可以通过await和async来简化数据
       this.$refs.loginFromLogin.validate(async valid => {//=》是回调函数，valid是布尔类型的返回值,true是验证通过
